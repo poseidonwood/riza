@@ -126,7 +126,7 @@ class Admin extends CI_Controller
 	}
 	public function add_member()
 	{
-		$data['title'] = 'Edit Data Member';
+		$data['title'] = 'Tambah Data Member';
 		$this->form_validation->set_rules('nama', 'nama', 'required|min_length[3]', [
 			'required'	=>	'Kolom nama tidak boleh kosong',
 			'min_length' =>	''
@@ -138,7 +138,7 @@ class Admin extends CI_Controller
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('tema/header', $data);
-			$this->load->view('admin/edit_member', $data);
+			$this->load->view('admin/add_member', $data);
 			$this->load->view('tema/footer');
 		} else {
 			$this->Admin_model->simpan_user();
