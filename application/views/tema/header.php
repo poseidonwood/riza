@@ -5,7 +5,7 @@
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title><?php echo $title; ?> - Perpustakaan Online MA AL HASAN</title>
+   <title><?php echo $title; ?></title>
    <!-- Favicon and touch icons -->
    <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/dist/img/ico/favicon.png" type="image/x-icon">
    <!-- Start Global Mandatory Style

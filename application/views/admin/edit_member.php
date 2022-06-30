@@ -32,7 +32,7 @@
                      </div>
                      <div class="form-group">
                         <button type="submit" class="btn btn-primary">Simpan</button>
-                        <a href="<?php echo base_url(); ?>admin/user" class="btn btn-warning">Batal</a>
+                        <a href="<?php echo base_url(); ?>admin/data_member" class="btn btn-warning">Batal</a>
                      </div>
                   </form>
                </div>

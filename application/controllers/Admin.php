@@ -119,7 +119,13 @@ class Admin extends CI_Controller
 	public function data_member()
 	{
 		$data['title'] = 'Data Member';
-		$data['datamember'] = $this->Admin_model->data_user_all();
+		if ($this->input->post()) {
+			$data['datamember'] = $this->Admin_model->data_user_all_class(array('kelas' => $this->input->post('sortirclass')));
+			$data['sortirclass'] = $this->input->post('sortirclass');
+		} else {
+			$data['datamember'] = $this->Admin_model->data_user_all();
+			$data['sortirclass'] = "X";
+		}
 		$this->load->view('tema/header', $data);
 		$this->load->view('admin/data_member', $data);
 		$this->load->view('tema/footer');

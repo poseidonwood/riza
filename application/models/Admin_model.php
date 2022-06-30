@@ -180,6 +180,12 @@ class Admin_model extends CI_Model
 		$this->db->order_by('akun_dibuat', 'DESC');
 		return $this->db->get('tb_user')->result_array();
 	}
+	public function data_user_all_class($value)
+	{
+		$this->db->where($value);
+		$this->db->order_by('akun_dibuat', 'DESC');
+		return $this->db->get('tb_user')->result_array();
+	}
 
 	public function data_pinjam_all()
 	{

@@ -48,6 +48,7 @@ class Registrasi extends CI_Controller
 		$data = array(
 			'nama_user'			=>   ucwords($this->input->post('nama')),
 			'nis'				=>   $this->input->post('nis'),
+			'kelas'				=>   $this->input->post('kelas'),
 			'email_user'		=>   strtolower($this->input->post('email')),
 			'password_user'		=>   password_hash($this->input->post('password'), PASSWORD_DEFAULT),
 			'status_user'		=>   0,

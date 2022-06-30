@@ -6,6 +6,29 @@
             <div class="panel-heading">
                <div class="btn-group" id="buttonexport">
                   <a href="#">
+                     <h4>Sortir Data By Kelas</h4>
+                  </a>
+               </div>
+            </div>
+            <div class="panel-body">
+               <form action="<?= current_url() ?>" method="POST">
+                  <div class="form-group">
+                     <select class="form-control" name="sortirclass">
+                        <option value="X" <?= $sortirclass == "X" ? "selected" : NULL ?>>X</option>
+                        <option value="XI" <?= $sortirclass == "XI" ? "selected" : NULL ?>>XI</option>
+                        <option value="XII" <?= $sortirclass == "XII" ? "selected" : NULL ?>>XII</option>
+                     </select>
+                  </div>
+                  <div class="form-group">
+                     <button type="submit" class="btn btn-success"><i class="fa fa-search"></i> Sortir</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+         <div class="panel panel-bd lobidrag">
+            <div class="panel-heading">
+               <div class="btn-group" id="buttonexport">
+                  <a href="#">
                      <h4><?php echo $title; ?></h4>
                   </a>
                </div>
@@ -25,6 +48,8 @@
                      <thead>
                         <tr class="info">
                            <th>No</th>
+                           <th>NIS</th>
+                           <th>Kelas</th>
                            <th>Nama</th>
                            <th>Email</th>
                            <th>Member Sejak</th>
@@ -37,6 +62,8 @@
                         <?php foreach ($datamember as $dm) : ?>
                            <tr>
                               <td><?php echo $i; ?></td>
+                              <td><?php echo $dm['nis']; ?></td>
+                              <td><?php echo $dm['kelas']; ?></td>
                               <td><?php echo $dm['nama_user']; ?></td>
                               <td><?php echo $dm['email_user']; ?></td>
                               <td><?php echo date('d-m-Y H:i:s', $dm['akun_dibuat']); ?></td>

@@ -10,6 +10,15 @@
 				<small class="text-danger"><?php echo form_error('nis'); ?></small>
 			</div>
 			<div class="form-group">
+				<label class="control-label" for="input-nama">Kelas</label>
+				<select class="form-control" name="kelas">
+					<option value="X">X</option>
+					<option value="XI">XI</option>
+					<option value="XII">XII</option>
+				</select>
+				<small class="text-danger"><?php echo form_error('kelas'); ?></small>
+			</div>
+			<div class="form-group">
 				<label class="control-label" for="input-nama">Nama</label>
 				<input type="text" name="nama" placeholder="Nama Lengkap" id="input-nama" value="<?php echo set_value('nama'); ?>" class="form-control" required>
 				<small class="text-danger"><?php echo form_error('nama'); ?></small>
