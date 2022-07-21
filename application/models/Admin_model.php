@@ -28,6 +28,7 @@ class Admin_model extends CI_Model
 		$penulis = ucwords($this->input->post('author'));
 		$jml_b = $this->input->post('jml_buku');
 		$jml_h = $this->input->post('jml_hal');
+		$type_buku = $this->input->post('type_buku');
 		$kategori = $this->input->post('kat_buku');
 		$desk = $this->input->post('deskripsi');
 		$link = $this->input->post('link');
@@ -42,13 +43,13 @@ class Admin_model extends CI_Model
 			if ($this->upload->do_upload('gambar')) {
 				$gambar = $this->upload->data();
 				$config['image_library'] = 'gd2';
-				$config['source_image'] = './assets/buku' . $gambar['file_name'];
+				$config['source_image'] = './assets/buku/' . $gambar['file_name'];
 				$config['create_thumb'] = FALSE;
 				$config['maintain_ratio'] = FALSE;
 				$config['quality'] = '60%';
 				$config['width'] = 300;
 				$config['height'] = 461;
-				$config['new_image'] = './assets/buku' . $gambar['file_name'];
+				$config['new_image'] = './assets/buku/' . $gambar['file_name'];
 				$this->load->library('image_lib', $config);
 				$this->image_lib->resize();
 
@@ -63,15 +64,19 @@ class Admin_model extends CI_Model
 					'deskripsi_buku'	=>	$desk,
 					'link_buku'			=>	$link,
 					'jml_bintang'		=>	0,
-					'foto_buku'			=>	$gambar['file_name']
+					'foto_buku'			=>	$gambar['file_name'],
+					'type_buku' 		=> $type_buku
 				);
+			}else{
+				$this->session->set_flashdata('error', $this->upload->display_errors());
+				redirect('admin/add_buku');
 			}
 		} else {
 			$this->session->set_flashdata('error', 'Anda belum memilih gambar');
 			redirect('admin/add_buku');
 		}
-
 		$this->db->insert('tb_buku', $data);
+
 	}
 	public function ubah_user()
 	{

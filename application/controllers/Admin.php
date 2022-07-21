@@ -7,6 +7,7 @@ class Admin extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('Admin_model');
+		$this->load->model('MData');
 		if ($this->session->userdata('login_status') != 'login') {
 			redirect('login');
 		}
@@ -56,10 +57,15 @@ class Admin extends CI_Controller
 		$this->form_validation->set_rules('kat_buku', 'kat_buku', 'required', [
 			'required'	=>	'Kolom kategori buku tidak boleh kosong'
 		]);
+		$this->form_validation->set_rules('type_buku', 'type_buku', 'required', [
+			'required'	=>	'Type Buku tidak boleh kosong'
+		]);
 		$this->form_validation->set_rules('deskripsi', 'deskripsi', 'required|min_length[5]', [
 			'required'	=>	'Kolom deskripsi buku tidak boleh kosong',
 			'min_length' =>	'Deskripsi buku minimal 5 karakter'
 		]);
+		$kategorybuku  = $this->MData->selectdatawhereresult('tb_buku_kategory',array('status' => 1));
+		$data['kategorybuku'] = $kategorybuku;
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('tema/header', $data);
 			$this->load->view('admin/add_buku', $data);

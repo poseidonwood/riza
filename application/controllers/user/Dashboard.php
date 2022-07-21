@@ -7,6 +7,7 @@ class Dashboard extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('Home_model');
+		$this->load->model('MData');
 		if ($this->session->userdata('status_login') != 'sudah_login') {
 			redirect('user/login');
 		}

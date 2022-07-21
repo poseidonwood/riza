@@ -51,7 +51,7 @@
       <!-- Site wrapper -->
       <div class="wrapper">
          <header class="main-header">
-            <a href="index.html" class="logo">
+            <a href="<?=base_url()?>" class="logo">
                <!-- Logo -->
                <span class="logo-mini">
                <img src="<?php echo base_url(); ?>assets/dist/img/mini-logo.png" alt="">
