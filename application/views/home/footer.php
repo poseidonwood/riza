@@ -4,14 +4,14 @@
     <div id="bottom-footer">
       <div class="copyright"> Copyright - <a class="yourstore" href="http://ma-alhasan.sch.id/"> MA AL HASAN &copy; 2022 </a></div>
       <div class="footer-bottom-cms">
-        <div class="footer-payment">
+        <!-- <div class="footer-payment">
           <ul>
             <li class="mastero"><a href="#"><img alt="" src="<?php echo base_url(); ?>assets_home/image/payment/mastero.jpg"></a></li>
             <li class="visa"><a href="#"><img alt="" src="<?php echo base_url(); ?>assets_home/image/payment/visa.jpg"></a></li>
             <li class="currus"><a href="#"><img alt="" src="<?php echo base_url(); ?>assets_home/image/payment/currus.jpg"></a></li>
             <li class="discover"><a href="#"><img alt="" src="<?php echo base_url(); ?>assets_home/image/payment/discover.jpg"></a></li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

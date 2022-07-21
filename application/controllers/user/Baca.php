@@ -13,7 +13,8 @@ class Baca extends CI_Controller {
 
 	public function detail($url_buku) {
 		$data['title'] = 'Baca Buku';
-		$data['bacabuku'] = $this->Home_model->baca_buku($url_buku);
+		// $data['bacabuku'] = $this->Home_model->baca_buku($url_buku);
+		$data['bacabuku'] = $this->MData->selectdatawhere("tb_buku", array('url_buku' => $url_buku));
 		$getdataviewer = $this->MData->selectdatawhere("tb_buku",array('url_buku' => $url_buku));
 		$getcounviewer = $getdataviewer->jumlah_baca + 1;
 		$this->MData->edit(array('url_buku'=>$url_buku),'tb_buku',array('jumlah_baca' =>$getcounviewer));
@@ -21,5 +22,14 @@ class Baca extends CI_Controller {
 		$this->load->view('user/baca', $data);
 		$this->load->view('user/tema/footer');
 	}
+	public function detail1($url_buku) {
+		$data['title'] = 'Baca Buku';
+		$data['bacabuku'] = $this->Home_model->baca_buku($url_buku);
+		$getdataviewer = $this->MData->selectdatawhere("tb_buku",array('url_buku' => $url_buku));
+		$getcounviewer = $getdataviewer->jumlah_baca + 1;
+		$this->MData->edit(array('url_buku'=>$url_buku),'tb_buku',array('jumlah_baca' =>$getcounviewer));
+		$this->load->view('user/tema/header', $data);
+		$this->load->view('user/baca', $data);
+		$this->load->view('user/tema/footer');	}
 
 }

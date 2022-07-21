@@ -148,8 +148,7 @@ li{ cursor:pointer; list-style-type: none; display: inline-block; color: #F0F0F0
     </div>
     <div class="navbar-collapse">
       <ul class="main-navigation">
-        <li><a href="<?php echo base_url(); ?>"   class="parent"  >Home</a> </li>
-        
+        <li><a href="<?php echo base_url('user/dashboard'); ?>"   class="parent"  >Dashboard</a> </li>
       </ul>
     </div>
   </div>
