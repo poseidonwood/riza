@@ -15,7 +15,7 @@
                         <!-- Plugin content:powerpoint,txt,pdf,png,word,xl -->
                            <div class="btn-group">
                               <div class="buttonexport" id="buttonlist"> 
-                                 <a class="btn btn-add" href="<?php echo base_url(); ?>admin/add_buku"> <i class="fa fa-plus"></i> New Data
+                                 <a class="btn btn-add" href="<?php echo base_url(); ?>admin/add_buku"> <i class="fa fa-plus"></i> Tambah Data
                                  </a>  
                               </div>
                            </div>

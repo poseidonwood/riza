@@ -45,7 +45,7 @@
                                        <label for="">Kategori Buku</label>
                                        <select name="kat_buku" id="" class="form-control">
                                           <option value="">-Pilih-</option>
-                                          <option value="Buku">Buku</option>
+                                          <option value="Buku">Pelajaran</option>
                                           <option value="Novel">Novel</option>
                                           <option value="Komik">Komik</option>
                                        </select>

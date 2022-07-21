@@ -5,7 +5,7 @@
                   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                      <div id="cardbox1">
                         <div class="statistic-box">
-                           <i class="fa fa-user-plus fa-3x"></i>
+                           <i class="fa fa-users fa-3x"></i>
                            <div class="counter-number pull-right">
                               <span class="count-number"><?php echo $m_aktif; ?></span> 
                               <span class="slight"><i class="fa fa-play fa-rotate-270"> </i>

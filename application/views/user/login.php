@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container"><br></br>
 	<h2><?php echo $title; ?></h2>
           <p>Pastikan anda telah terdaftar sebagai member</p>
           <div class="flash-data" data-flashdata="<?php echo $this->session->flashdata('flash'); ?>"></div>
@@ -12,7 +12,7 @@
 		          </div>
 		          <div class="form-group">
 		            <label class="control-label" for="input-password">Password</label>
-		            <input type="password" name="password" placeholder="ketik password anda disini" id="input-password" class="form-control">
+		            <input type="password" name="password" placeholder="Ketik password anda disini" id="input-password" class="form-control">
 		            <a href="forgetpassword.html" class="forgot">Lupa Password</a></div>
 		            <div class="form-group">
 		            	<button type="submit" class="btn btn-success"> Login</button>

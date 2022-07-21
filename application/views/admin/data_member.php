@@ -20,7 +20,7 @@
                      </select>
                   </div>
                   <div class="form-group">
-                     <button type="submit" class="btn btn-success"><i class="fa fa-search"></i> Sortir</button>
+                     <button type="submit" class="btn btn-success"><i class="fa fa-list"></i> Sortir</button>
                   </div>
                </form>
             </div>
@@ -38,7 +38,7 @@
                <!-- Plugin content:powerpoint,txt,pdf,png,word,xl -->
                <div class="btn-group">
                   <div class="buttonexport" id="buttonlist">
-                     <a class="btn btn-add" href="<?php echo base_url(); ?>admin/add_member"> <i class="fa fa-plus"></i> New Data
+                     <a class="btn btn-add" href="<?php echo base_url(); ?>admin/add_member"> <i class="fa fa-plus"></i> Tambah Data
                      </a>
                   </div>
                </div>

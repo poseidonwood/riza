@@ -7,7 +7,7 @@
         <title><?php echo $title; ?></title>
 
         <!-- Favicon and touch icons -->
-        <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/dist/img/ico/favicon.png" type="image/x-icon">
+        <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/dist/img/ico/icon2.png" type="image/x-icon">
         <!-- Bootstrap -->
         <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <!-- Bootstrap rtl -->

@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title><?php echo $title; ?> - Perpustakaan Online MA AL HASAN</title>
       <!-- Favicon and touch icons -->
-      <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/dist/img/ico/favicon.png" type="image/x-icon">
+      <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/dist/img/ico/icon2.png" type="image/x-icon">
       <!-- Start Global Mandatory Style
          =====================================================================-->
       <!-- jquery-ui css -->
@@ -57,7 +57,7 @@
                <img src="<?php echo base_url(); ?>assets/dist/img/mini-logo.png" alt="">
                </span>
                <span class="logo-lg">
-               <img src="<?php echo base_url(); ?>assets/dist/img/logo.png" alt="">
+               <img src="<?php echo base_url(); ?>assets/dist/img/logo4.png" alt="" width="150px" height="130px">
                </span>
             </a>
             <!-- Header Navbar -->
@@ -86,9 +86,9 @@
                         <ul class="dropdown-menu" >
                            <li>
                               <a href="<?php echo base_url(); ?>user/profil">
-                              <i class="fa fa-user"></i> User Profile</a>
+                              <i class="fa fa-user"></i> Profil</a>
                            </li>
-                           <li><a href="<?php echo base_url(); ?>user/settings/password"><i class="fa fa-key"></i> Password Setting</a></li>
+                           <li><a href="<?php echo base_url(); ?>user/settings/password"><i class="fa fa-key"></i>Ubah Password</a></li>
                            <li><a href="<?php echo base_url(); ?>user/login/logout">
                               <i class="fa fa-sign-out"></i> Signout</a>
                            </li>

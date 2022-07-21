@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="e-commerce site well design with responsive view." />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link href="<?php echo base_url(); ?>assets_home/image/favicon.png" rel="icon" type="image/png" >
+<link href="<?php echo base_url(); ?>assets_home/image/icon2.png" rel="icon" type="image/png" >
 <link href="<?php echo base_url(); ?>assets_home/css/bootstrap.min.css" rel="stylesheet" media="screen" />
 <link href="<?php echo base_url(); ?>assets_home/javascript/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
@@ -110,7 +110,7 @@ li{ cursor:pointer; list-style-type: none; display: inline-block; color: #F0F0F0
   <div class="container">
     <div class="header-inner">
       <div class="col-sm-3 col-xs-3 header-left">
-        <div id="logo"> <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>assets_home/image/logo.png" title="Perpustakaan Online MA AL HASAN" alt="Perpustakaan Online MA AL HASAN" class="img-responsive" /></a> </div>
+        <div id="logo"> <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>assets_home/image/logo4.png" title="Perpustakaan Online MA AL HASAN" alt="Perpustakaan Online MA AL HASAN" class="img-responsive" width="220px"/></a> </div>
       </div>
       <div class="col-sm-9 col-xs-9 header-right">
         <div id="search" class="input-group">

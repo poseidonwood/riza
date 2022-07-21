@@ -7,7 +7,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <title><?php echo $title; ?></title>
    <!-- Favicon and touch icons -->
-   <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/dist/img/ico/favicon.png" type="image/x-icon">
+   <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/dist/img/ico/icon2.png" type="image/x-icon">
    <!-- Start Global Mandatory Style
          =====================================================================-->
    <!-- jquery-ui css -->
@@ -60,7 +60,7 @@
                <img src="<?php echo base_url(); ?>assets/dist/img/mini-logo.png" alt="">
             </span>
             <span class="logo-lg">
-               <img src="<?php echo base_url(); ?>assets/dist/img/logo.png" alt="">
+               <img src="<?php echo base_url(); ?>assets/dist/img/logo4.png" alt="" width="150px" height="130px">
             </span>
          </a>
          <!-- Header Navbar -->
@@ -85,7 +85,7 @@
                   <!-- user -->
                   <li class="dropdown dropdown-user">
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="<?php echo base_url(); ?>assets/dist/img/avatar5.png" class="img-circle" width="45" height="45" alt="user"></a>
+                        <img src="<?php echo base_url(); ?>assets/dist/img/avatar6.png" class="img-circle" width="45" height="45" alt="user"></a>
                      <ul class="dropdown-menu">
                         <li><a href="<?php echo base_url(); ?>login/logout">
                               <i class="fa fa-sign-out"></i> Signout</a>

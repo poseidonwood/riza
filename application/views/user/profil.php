@@ -21,7 +21,7 @@
                                  <div>
                                     <ul>
                                        <li>
-                                          English
+                                          Indonesia
                                           <div class="fluency fluency-4"></div>
                                        </li>
                                     </ul>
@@ -41,18 +41,18 @@
                               </div>
                            </div>
                            <div class="card-content-summary">
-                              <p>Specialties are Creative UI, HTML5, CSS3, Semantic Web, Responsive Layouts, Web Standards Compliance, Performance Optimization, Cross Device Troubleshooting.</p>
+                              <p>Biodata user</p>
                            </div>
                         </div>
                         <div class="card-footer">
                            <div class="card-footer-stats">
                               <div>
                                  <p>PROJECTS:</p>
-                                 <i class="fa fa-users"></i><span>241</span>
+                                 <i class="fa fa-users"></i><span> -</span>
                               </div>
                               <div>
                                  <p>MESSAGES:</p>
-                                 <i class="fa fa-coffee"></i><span>350</span>
+                                 <i class="fa fa-coffee"></i><span> -</span>
                               </div>
                               <div>
                                  <p>Last online</p>
@@ -60,7 +60,7 @@
                               </div>
                            </div>
                            <div class="card-footer-message">
-                              <h4><i class="fa fa-comments"></i> Message me</h4>
+                              <h4><i class="fa fa-comments"></i> Chat saya</h4>
                            </div>
                         </div>
                      </div>

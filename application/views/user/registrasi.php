@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container"> <br></br>
 	<h2><?php echo $title; ?></h2>
 	<p>Pastikan data yang anda daftarkan valid</p>
 	<div class="form">
