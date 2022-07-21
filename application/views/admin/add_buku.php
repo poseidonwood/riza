@@ -30,7 +30,7 @@
                         </div>
                      </div>
                      <div class="row">
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-6">
                            <label for="">Type Buku</label>
                            <select name="type_buku" id="" class="form-control">
                               <option value="">-Pilih-</option>
@@ -39,6 +39,11 @@
                            </select>
                            <small class="text-danger"><?php echo form_error('kat_buku'); ?></small>
                         </div>
+                        <div class="form-group col-md-6">
+                           <label for="">Jumlah Halaman</label>
+                           <input type="text" name="jml_hal" class="form-control" value="<?php echo set_value('jml_hal'); ?>">
+                           <small class="text-danger"><?php echo form_error('jml_hal'); ?></small>
+                        </div>
                      </div>
                      <div class="row">
                         <div class="form-group col-md-6">
@@ -46,9 +51,8 @@
                            <input type="number" name="jml_buku" class="form-control" required="">
                         </div>
                         <div class="form-group col-md-6">
-                           <label for="">Jumlah Halaman</label>
-                           <input type="text" name="jml_hal" class="form-control" value="<?php echo set_value('jml_hal'); ?>">
-                           <small class="text-danger"><?php echo form_error('jml_hal'); ?></small>
+                           <label for="">Foto Buku</label>
+                           <input type="file" name="gambar" class="form-control">
                         </div>
                      </div>
                      <div class="row">
@@ -59,21 +63,17 @@
                               <?php
                               foreach ($kategorybuku as $kategorys) {
                               ?>
-                                 <option value="<?= $kategorys->kategory?>"><?= $kategorys->nm_kategory?></option>
+                                 <option value="<?= $kategorys->kategory ?>"><?= $kategorys->nm_kategory ?></option>
                               <?php } ?>
                            </select>
                            <small class="text-danger"><?php echo form_error('kat_buku'); ?></small>
                         </div>
                         <div class="form-group col-md-6">
-                           <label for="">Foto Buku</label>
-                           <input type="file" name="gambar" class="form-control">
+                           <label for="">Link Buku</label>
+                           <input type="text" name="link" class="form-control" value="<?php echo set_value('link'); ?>">
+                           <small class="text-danger"><?php echo form_error('link'); ?></small>
+                           <small class="text-muted">Link buku dari google drive. Lihat caranya di <a href="">sini</a></small>
                         </div>
-                     </div>
-                     <div class="form-group">
-                        <label for="">Link Buku</label>
-                        <input type="text" name="link" class="form-control" value="<?php echo set_value('link'); ?>">
-                        <small class="text-danger"><?php echo form_error('link'); ?></small>
-                        <small class="text-muted">Link buku dari google drive. Lihat caranya di <a href="">sini</a></small>
                      </div>
                      <div class="form-group">
                         <label for="">Deskripsi Buku</label>
