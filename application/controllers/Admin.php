@@ -125,6 +125,8 @@ class Admin extends CI_Controller
 	public function data_member()
 	{
 		$data['title'] = 'Data Member';
+		$data['kelas'] = $this->MData->selectdatawhereresult('tb_kelas', ['status' => 1]);
+
 		if ($this->input->post()) {
 			$data['datamember'] = $this->Admin_model->data_user_all_class(array('kelas' => $this->input->post('sortirclass')));
 			$data['sortirclass'] = $this->input->post('sortirclass');
@@ -138,22 +140,27 @@ class Admin extends CI_Controller
 	}
 	public function add_member()
 	{
+		
 		$data['title'] = 'Tambah Data Member';
-		$this->form_validation->set_rules('nama', 'nama', 'required|min_length[3]', [
-			'required'	=>	'Kolom nama tidak boleh kosong',
-			'min_length' =>	''
-		]);
-		$this->form_validation->set_rules('email', 'email', 'required|min_length[3]', [
-			'required'	=>	'Kolom email tidak boleh kosong',
-			'min_length' =>	''
-		]);
+		$data['kelas'] = $this->MData->selectdatawhereresult('tb_kelas', ['status' => 1]);
+
+		// $this->form_validation->set_rules('nama', 'nama', 'required|min_length[3]', [
+		// 	'required'	=>	'Kolom nama tidak boleh kosong',
+		// 	'min_length' =>	''
+		// ]);
+		// $this->form_validation->set_rules('email', 'email', 'required|min_length[3]', [
+		// 	'required'	=>	'Kolom email tidak boleh kosong',
+		// 	'min_length' =>	''
+		// ]);
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('tema/header', $data);
 			$this->load->view('admin/add_member', $data);
 			$this->load->view('tema/footer');
-		} else {
-			$this->Admin_model->simpan_user();
+		}
+		if ($this->input->post()) {
+			$_POST['input']['akun_dibuat'] = strtotime(date('Y-m-d H:i:s'));
+			$this->MData->tambah('tb_user', $_POST['input']);
 			$this->session->set_flashdata('flash', 'Data member berhasil diubah');
 			redirect('admin/data_member');
 		}
@@ -168,6 +175,7 @@ class Admin extends CI_Controller
 	{
 		$data['title'] = 'Edit Data Member';
 		$data['userid'] = $this->Admin_model->userbyid($id);
+		$data['kelas'] = $this->MData->selectdatawhereresult('tb_kelas',['status' =>1]);
 		$this->form_validation->set_rules('input[nama_user]', 'nama', 'required|min_length[3]', [
 			'required'	=>	'Kolom nama tidak boleh kosong',
 			'min_length' =>	''

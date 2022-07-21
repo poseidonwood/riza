@@ -13,10 +13,13 @@
             <div class="panel-body">
                <form action="<?= current_url() ?>" method="POST">
                   <div class="form-group">
-                     <select class="form-control" name="sortirclass">
-                        <option value="X" <?= $sortirclass == "X" ? "selected" : NULL ?>>X</option>
-                        <option value="XI" <?= $sortirclass == "XI" ? "selected" : NULL ?>>XI</option>
-                        <option value="XII" <?= $sortirclass == "XII" ? "selected" : NULL ?>>XII</option>
+                     <select name="sortirclass" id="" class="form-control">
+                        <?php
+                        foreach ($kelas as $kelass) {
+                           $selecteddata = $sortirclass == $kelass->kelas ? "selected" : NULL;
+                           echo "<option value='{$kelass->kelas}' {$selecteddata}>{$kelass->nm_kelas}</option>";
+                        }
+                        ?>
                      </select>
                   </div>
                   <div class="form-group">
@@ -69,7 +72,9 @@
                               <td><?php echo date('d-m-Y H:i:s', $dm['akun_dibuat']); ?></td>
                               <td>
                                  <?php if ($dm['status_user'] == 0) { ?>
-                                    <span class="label-custom label label-warning">Pending</span>
+                                    <span class="label label-primary">Pending</span>
+                                 <?php } else if ($dm['status_user'] == 2) { ?>
+                                    <span class="label label-danger">Non-Aktif</span>
                                  <?php } else { ?>
                                     <span class="label-custom label label-success">Aktif</span>
                                  <?php } ?>

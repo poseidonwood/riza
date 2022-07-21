@@ -1,10 +1,10 @@
 <div class="breadcrumb parallax-container">
-  <div class="parallax"><img src="<?php echo base_url(); ?>assets/buku/<?php echo $bukuid->foto_buku; ?>" alt="#"></div>
-  <h1><?php echo $title; ?> <?php echo $bukuid->kategori_buku; ?> <?php echo $bukuid->judul_buku; ?></h1>
+  <div class="parallax"><img src="<?= base_url(); ?>assets/buku/<?= $bukuid['foto_buku']; ?>" alt="#"></div>
+  <h1><?= $title; ?> <?= $bukuid['kategori_buku']; ?> <?= $bukuid['judul_buku']; ?></h1>
   <ul>
-    <li><a href="<?php echo base_url(); ?>home">Home</a></li>
-    <li><a href=""><?php echo $bukuid->kategori_buku; ?></a></li>
-    <li><a href="#"><?php echo $bukuid->judul_buku; ?></a></li>
+    <li><a href="<?= base_url(); ?>home">Home</a></li>
+    <li><a href=""><?= $bukuid['kategori_buku']; ?></a></li>
+    <li><a href="#"><?= $bukuid['judul_buku']; ?></a></li>
   </ul>
 </div>
 <div class="container">
@@ -14,46 +14,46 @@
         <div class="col-sm-5">
           <div class="thumbnails">
             <?php
-            if ($bukuid->type_buku == 'digital') {
+            if ($bukuid['type_buku'] == 'digital') {
               echo "<div class='ribbon blue'><span>Digital</span></div>";
             } else {
               echo "<div class='ribbon green'><span>Fisik</span></div>";
             }
             ?>
-            <div><a class="thumbnail fancybox" href="image/product/product8.jpg" title="<?php echo $bukuid->judul_buku; ?>"><img src="<?php echo base_url(); ?>assets/buku/<?php echo $bukuid->foto_buku; ?>" title="<?php echo $bukuid->judul_buku; ?>" alt="<?php echo $bukuid->judul_buku; ?>" /></a></div>
+            <div><a class="thumbnail fancybox" href="image/product/product8.jpg" title="<?= $bukuid['judul_buku']; ?>"><img src="<?= base_url(); ?>assets/buku/<?= $bukuid['foto_buku']; ?>" title="<?= $bukuid['judul_buku']; ?>" alt="<?= $bukuid['judul_buku']; ?>" /></a></div>
 
           </div>
         </div>
         <div class="col-sm-7 prodetail">
-          <h1 class="productpage-title"><?php echo $bukuid->judul_buku; ?></h1>
+          <h1 class="productpage-title"><?= $bukuid['judul_buku']; ?></h1>
           <?php if ($this->session->userdata('status_login') != 'sudah_login') { ?>
             <div class="rating"> Beri Bintang Untuk Buku Ini
-              <?php echo "<div id='rate-$bukuid->id_buk]'>
-        <put type='hidden' name='rating' id='rating' value='$bukuid->jml_bintan]'>
-          < onMouseOut=\"resetRating($bukuid->id_buk])\">";
-              r ($i = 1; $i <= 5; $i++) {
-                if ($i <= $bukuid->jml_bintang) {
+              <?= "<div id='rate-$bukuid[id_buku]'>
+        <input type='hidden' name='rating' id='rating' value='$bukuid[jml_bintang]'>
+          <ul onMouseOut=\"resetRating($bukuid[id_buku])\">";
+              for ($i = 1; $i <= 5; $i++) {
+                if ($i <= $bukuid["jml_bintang"]) {
                   $selected = "selected";
                 } else {
                   $selected = "";
                 }
-                echo "<li class='$selected' onmouseover=\"highlightStar(this,$bukuid->id_buk])\" mouseout=\"removeHighlight($bukuid->id_buk]);\" Click=\"noRating()\">&#9733;</li>";
+                echo "<li class='$selected' onmouseover=\"highlightStar(this,$bukuid[id_buku])\" onmouseout=\"removeHighlight($bukuid[id_buku]);\" onClick=\"noRating()\">&#9733;</li>";
               }
               echo "<ul>
         </div>"; ?>
             </div>
           <?php } else { ?>
             <div class="rating"> Beri Bintang Untuk Buku Ini
-              <?php echo "<div id='rate-$bukuid->id_buk]'>
-        <put type='hidden' name='rating' id='rating' value='$bukuid->jml_bintan]'>
-          < onMouseOut=\"resetRating($bukuid->id_buk])\">";
-              r ($i = 1; $i <= 5; $i++) {
-                if ($i <= $bukuid->jml_bintang) {
+              <?= "<div id='rate-$bukuid[id_buku]'>
+        <input type='hidden' name='rating' id='rating' value='$bukuid[jml_bintang]'>
+          <ul onMouseOut=\"resetRating($bukuid[id_buku])\">";
+              for ($i = 1; $i <= 5; $i++) {
+                if ($i <= $bukuid["jml_bintang"]) {
                   $selected = "selected";
                 } else {
                   $selected = "";
                 }
-                echo "<li class='$selected' onmouseover=\"highlightStar(this,$bukuid->id_buk])\" mouseout=\"removeHighlight($bukuid->id_buk]);\" Click=\"addRating(this,$bukuid->id_buk])\">&#33;</li>";
+                echo "<li class='$selected' onmouseover=\"highlightStar(this,$bukuid[id_buku])\" onmouseout=\"removeHighlight($bukuid[id_buku]);\" onClick=\"addRating(this,$bukuid[id_buku])\">&#9733;</li>";
               }
               echo "<ul>
         </div>"; ?>
@@ -68,21 +68,21 @@
           <ul class="list-unstyled product_info">
             <li>
               <label>Penulis:</label>
-              <span> <a href="#"><?php echo $bukuid->penulis_buku; ?></a></span>
+              <span> <a href="#"><?= $bukuid['penulis_buku']; ?></a></span>
             </li><br>
             <li>
               <label>Kategori:</label>
-              <span> <?php echo $bukuid->kategori_buku; ?></span>
+              <span> <?= $bukuid['kategori_buku']; ?></span>
             </li><br>
             <li>
               <label>Jumlah Halaman:</label>
-              <span> <?php echo $bukuid->jml_halaman; ?> Halaman</span>
+              <span> <?= $bukuid['jml_halaman']; ?> Halaman</span>
             </li><br>
             <li>
               <label>Status Ketersediaan:</label>
               <span>
-                <?php if ($bukuid->jumlah_buku != 0) { ?>
-                  Tersedia <?php echo $bukuid->jumlah_buku; ?> Item lagi
+                <?php if ($bukuid['jumlah_buku'] != 0) { ?>
+                  Tersedia <?= $bukuid['jumlah_buku']; ?> Item lagi
                 <?php } else { ?>
                   Kosong
                 <?php } ?>
@@ -90,23 +90,23 @@
             </li>
           </ul>
           <hr>
-          <p class="product-desc"> <?php echo $bukuid->deskripsi_buku; ?></p>
+          <p class="product-desc"> <?= $bukuid['deskripsi_buku']; ?></p>
           <div id="product">
             <div class="form-group">
               <?php
-              if ($bukuid->type_buku == 'digital') {
+              if ($bukuid['type_buku'] == 'digital') {
               ?>
-                <?php if ($bukuid->jumlah_buku == 0) { ?>
+                <?php if ($bukuid['jumlah_buku'] == 0) { ?>
                   <a class="btn btn-success" onclick="nol();"> Baca</a>
                 <?php } else { ?>
-                  <a href="<?php echo base_url(); ?>user/baca/detail/<?php echo $bukuid->url_buku; ?>" class="btn btn-info addtocart-btn" title="Baca"> Baca </a>
+                  <a href="<?= base_url(); ?>user/baca/detail/<?= $bukuid['url_buku']; ?>" class="btn btn-info addtocart-btn" title="Baca"> Baca </a>
                 <?php }
               } else {
                 ?>
-                <?php if ($bukuid->jumlah_buku == 0) { ?>
+                <?php if ($bukuid['jumlah_buku'] == 0) { ?>
                   <a class="btn btn-primary" onclick="nol();"> Pinjam</a>
                 <?php } else { ?>
-                  <a href="<?php echo base_url(); ?>home/pinjam/<?php echo $bukuid->id_buku; ?>" class="btn btn-primary"> Pinjam</a>
+                  <a href="<?= base_url(); ?>home/pinjam/<?= $bukuid['id_buku']; ?>" class="btn btn-primary"> Pinjam</a>
               <?php }
               } ?>
             </div>
@@ -122,7 +122,7 @@
           <div class="tab-pane active" id="tab-description">
             <div class="cpt_product_description ">
               <div>
-                <p> <?php echo $bukuid->deskripsi_buku; ?></p>
+                <p> <?= $bukuid['deskripsi_buku']; ?></p>
               </div>
             </div>
             <!-- cpt_container_end -->
@@ -174,9 +174,9 @@
 </div>
 
 <<!-- div class="container">
-  <h3 class="h3"><?php echo $title; ?> <?php echo $bukuid->kategori_buku; ?> <?php echo $bukuid->judul_buku; ?></h3>
+  <h3 class="h3"><?= $title; ?> <?= $bukuid['kategori_buku']; ?> <?= $bukuid['judul_buku']; ?></h3>
   <div class="embed-responsive embed-responsive-1by1">
-    <iframe class="embed-responsive-item" src="<?php echo $bukuid->link_buku; ?>" allowfullscreen></iframe>
+    <iframe class="embed-responsive-item" src="<?= $bukuid['link_buku']; ?>" allowfullscreen></iframe>
   </div>
   </div>
   <hr>

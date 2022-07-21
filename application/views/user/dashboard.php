@@ -64,7 +64,12 @@
                         <div class="detailswork">
                            <div class="btn-group pull-right" role="group">
                               <!-- <a href="<?php echo base_url(); ?>user/baca/detail/<?php echo $dp['url_buku']; ?>" title="Klik untuk mulai membaca" class='text-white btn btn-primary' ">Baca</a> -->
-                           <a href=" <?php echo base_url(); ?>user/dashboard/kembalikan/<?php echo $dp['id_buku_pinjaman']; ?>" class='text-white btn btn-success' title="Klik untuk mengembalikan buku">Kembalikan</a>
+                              <?php
+                              if ($dp['status_pinjam'] == 1) { ?>
+                                 <a href="<?php echo base_url(); ?>user/dashboard/kembalikan/<?php echo $dp['id_buku_pinjaman']; ?>" class='text-white btn btn-success' title="Klik untuk mengembalikan buku">Kembalikan</a>
+                              <?php } else { ?>
+                                 <a href="#" class='text-white btn btn-danger' title="Klik untuk mengembalikan buku">Proses Acc Admin</a>
+                              <?php } ?>
                            </div>
                            <a href="#" title="Klik untuk mulai membaca"><?php echo $dp['judul_buku']; ?> (<?php echo ucwords($dp['type_buku']); ?>)</a> <br>
                            <p><?php echo $dp['kategori_buku']; ?> karya <?php echo $dp['penulis_buku']; ?></p>

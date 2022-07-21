@@ -48,7 +48,7 @@
                      <div class="row">
                         <div class="form-group col-md-6">
                            <label for="">Stok Buku</label>
-                           <input type="number" name="jml_buku" class="form-control" required="">
+                           <input type="number" name="jml_buku" class="form-control" required="" value="0">
                         </div>
                         <div class="form-group col-md-6">
                            <label for="">Foto Buku</label>

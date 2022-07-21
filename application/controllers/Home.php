@@ -10,7 +10,11 @@ class Home extends CI_Controller {
 
 	public function index() {
 		$data['title'] = 'Beranda';
-		$data['databuku'] = $this->Home_model->databuku();
+		if($this->input->post()){
+			$data['databuku'] = $this->MData->customarray("SELECT * FROM tb_buku where judul_buku like '%{$this->input->post('search')}%' ORDER BY tgl_input_buku DESC");
+		}else{
+			$data['databuku'] = $this->Home_model->databuku();
+		}
 		$data['datapinjaman'] = $this->Home_model->data_pinjaman();
 		$data['t_pinjaman'] = $this->db->get_where('tb_pinjaman',['id_user_pinjaman' =>	$this->session->userdata('id')])->num_rows();
 		$this->load->view('home/header', $data);

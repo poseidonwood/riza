@@ -12,7 +12,9 @@
           <div class="flash-data-error" data-flashdata="<?php echo $this->session->flashdata('error'); ?>"></div>
           <div class="flash-data" data-flashdata="<?php echo $this->session->flashdata('flash'); ?>"></div>
           <div class="row">
-            <?php foreach ($databuku as $db) : ?>
+            <?php
+             if($databuku !== FALSE ){
+              foreach ($databuku as $db) : ?>
               <div class="product-layout  product-grid  col-lg-3 col-md-4 col-sm-6 col-xs-12">
                 <?php
                 if ($db['type_buku'] == 'digital') {
@@ -91,7 +93,10 @@
                   </div>
                 </div>
               </div>
-            <?php endforeach; ?>
+            <?php endforeach; 
+            }else{
+            echo "<h5 style='text-align:center;'>Data yang anda cari tidak ada</h5>";
+            }?>
           </div>
         </div>
       </div>
