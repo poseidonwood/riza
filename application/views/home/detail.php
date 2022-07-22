@@ -20,7 +20,8 @@
               echo "<div class='ribbon green'><span>Fisik</span></div>";
             }
             ?>
-            <div><a class="thumbnail fancybox" href="image/product/product8.jpg" title="<?= $bukuid['judul_buku']; ?>"><img src="<?= base_url(); ?>assets/buku/<?= $bukuid['foto_buku']; ?>" title="<?= $bukuid['judul_buku']; ?>" alt="<?= $bukuid['judul_buku']; ?>" /></a></div>
+            <div><a class="thumbnail fancybox" href="image/product/product8.jpg" title="<?= $bukuid['judul_buku']; ?>">
+            <img style="width:100%;" src="<?= base_url(); ?>assets/buku/<?= $bukuid['foto_buku']; ?>" title="<?= $bukuid['judul_buku']; ?>" alt="<?= $bukuid['judul_buku']; ?>" /></a></div>
 
           </div>
         </div>
