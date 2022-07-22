@@ -139,6 +139,18 @@
                      </span>
                   </a>
                </li>
+               <li>
+                  <a href="<?php echo base_url(); ?>admin/data_kelas"><i class="fa fa-graduation-cap"></i><span>Kelas</span>
+                     <span class="pull-right-container">
+                     </span>
+                  </a>
+               </li>
+               <li>
+                  <a href="<?php echo base_url(); ?>admin/data_kategory"><i class="fa fa-book"></i><span>Kategory Buku</span>
+                     <span class="pull-right-container">
+                     </span>
+                  </a>
+               </li>
                <!-- <li class="treeview">
                      <a href="#">
                      <i class="fa fa-users"></i><span>Member</span>

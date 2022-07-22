@@ -161,7 +161,7 @@
       </div>
     </div>
   </header>
-  <nav id="menu" class="navbar">
+  <!-- <nav id="menu" class="navbar">
     <div class="nav-inner">
       <div class="navbar-header"><span id="category" class="visible-xs">Menu</span>
         <button type="button" class="btn btn-navbar navbar-toggle"><i class="fa fa-bars"></i></button>
@@ -172,4 +172,4 @@
         </ul>
       </div>
     </div>
-  </nav>
+  </nav> -->

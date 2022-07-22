@@ -103,7 +103,7 @@
                         <i class="fa fa-dot-circle-o"></i>
                         <a href="#"><?php echo $du['nama_user']; ?></a><br>
                         <div class="progress runningprogress">
-                           <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="" data-original-title="100%"></div>
+                           <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="" data-original-title="50%"></div>
                         </div>
                      <?php } else { ?>
                         <span class="label-success label label-default pull-right">Aktif</span>

@@ -138,20 +138,59 @@ class Admin extends CI_Controller
 		$this->load->view('admin/data_member', $data);
 		$this->load->view('tema/footer');
 	}
+	public function data_kelas()
+	{
+		$data['title'] = 'Data Kelas';
+		$data['kelas'] = $this->MData->customresult("SELECT * from tb_kelas ORDER BY kelas ASC");
+
+		// if ($this->input->post()) {
+		// 	$data['datamember'] = $this->Admin_model->data_user_all_class(array('kelas' => $this->input->post('sortirclass')));
+		// 	$data['sortirclass'] = $this->input->post('sortirclass');
+		// } else {
+		// 	$data['datamember'] = $this->Admin_model->data_user_all();
+		// 	$data['sortirclass'] = "X";
+		// }
+		$this->load->view('tema/header', $data);
+		$this->load->view('admin/data_kelas', $data);
+		$this->load->view('tema/footer');
+	}
+	public function data_kategory()
+	{
+		$data['title'] = 'Data Kategori';
+		$data['kategory'] = $this->MData->customresult("SELECT * from tb_buku_kategory ORDER BY id DESC");
+
+		// if ($this->input->post()) {
+		// 	$data['datamember'] = $this->Admin_model->data_user_all_class(array('kelas' => $this->input->post('sortirclass')));
+		// 	$data['sortirclass'] = $this->input->post('sortirclass');
+		// } else {
+		// 	$data['datamember'] = $this->Admin_model->data_user_all();
+		// 	$data['sortirclass'] = "X";
+		// }
+		$this->load->view('tema/header', $data);
+		$this->load->view('admin/data_kategory', $data);
+		$this->load->view('tema/footer');
+	}
+	// public function data_kategory()
+	// {
+	// 	$data['title'] = 'Data Member';
+	// 	$data['kelas'] = $this->MData->customresult("SELECT * from tb_kelas where status = '1' ORDER BY kelas ASC");
+
+	// 	if ($this->input->post()) {
+	// 		$data['datamember'] = $this->Admin_model->data_user_all_class(array('kelas' => $this->input->post('sortirclass')));
+	// 		$data['sortirclass'] = $this->input->post('sortirclass');
+	// 	} else {
+	// 		$data['datamember'] = $this->Admin_model->data_user_all();
+	// 		$data['sortirclass'] = "X";
+	// 	}
+	// 	$this->load->view('tema/header', $data);
+	// 	$this->load->view('admin/data_member', $data);
+	// 	$this->load->view('tema/footer');
+	// }
 	public function add_member()
 	{
 
 		$data['title'] = 'Tambah Data Member';
 		$data['kelas'] = $this->MData->customresult("SELECT * from tb_kelas where status = '1' ORDER BY kelas ASC");
-
-		// $this->form_validation->set_rules('nama', 'nama', 'required|min_length[3]', [
-		// 	'required'	=>	'Kolom nama tidak boleh kosong',
-		// 	'min_length' =>	''
-		// ]);
-		// $this->form_validation->set_rules('email', 'email', 'required|min_length[3]', [
-		// 	'required'	=>	'Kolom email tidak boleh kosong',
-		// 	'min_length' =>	''
-		// ]);
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('tema/header', $data);
@@ -165,11 +204,41 @@ class Admin extends CI_Controller
 			redirect('admin/data_member');
 		}
 	}
+	public function add_kelas()
+	{
+
+		$data['title'] = 'Tambah Data Kelas';
+		$data['kelas'] = $this->MData->customresult("SELECT * from tb_kelas where status = '1' ORDER BY kelas ASC");
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('tema/header', $data);
+			$this->load->view('admin/add_kelas', $data);
+			$this->load->view('tema/footer');
+		}
+		if ($this->input->post()) {
+			$_POST['input']['nm_kelas'] = $_POST['input']['kelas'];
+			$this->MData->tambah('tb_kelas', $_POST['input']);
+			$this->session->set_flashdata('flash', 'Data kelas berhasil tambah');
+			redirect('admin/data_kelas');
+		}
+	}
 	public function delete_member($id)
 	{
 		$this->Admin_model->del_user($id);
 		$this->session->set_flashdata('flash', 'Data user berhasil dihapus');
 		redirect('admin/data_member');
+	}
+	public function delete_kelas($id)
+	{
+		$this->MData->delete('tb_kelas',['id'=>$id]);
+		$this->session->set_flashdata('flash', 'Data kelas berhasil dihapus');
+		redirect('admin/data_kelas');
+	}
+	public function delete_kategory($id)
+	{
+		$this->MData->delete('tb_buku_kategory',['id'=>$id]);
+		$this->session->set_flashdata('flash', 'Data kategory berhasil dihapus');
+		redirect('admin/data_kategory');
 	}
 	public function edit_member($id)
 	{
@@ -193,6 +262,40 @@ class Admin extends CI_Controller
 			$this->Admin_model->ubah_user();
 			$this->session->set_flashdata('flash', 'Data member berhasil diubah');
 			redirect('admin/data_member');
+		}
+	}
+	public function edit_kelas($id)
+	{
+		$data['title'] = 'Edit Data Kelas';
+		$data['kelas'] = $this->MData->customrow("SELECT * from tb_kelas where id = '{$id}'");
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('tema/header', $data);
+			$this->load->view('admin/edit_kelas', $data);
+			$this->load->view('tema/footer');
+		} 
+		if($this->input->post()){
+			$_POST['input']['nm_kelas'] = $_POST['input']['kelas'];
+			$this->MData->edit(['id'=>$id],'tb_kelas',$_POST['input']);
+			$this->session->set_flashdata('flash', 'Data Kelas berhasil diubah');
+			redirect('admin/data_kelas');
+		}
+	}
+	public function edit_kategory($id)
+	{
+		$data['title'] = 'Edit Data Buku Kategory';
+		$data['kategory'] = $this->MData->customrow("SELECT * from tb_buku_kategory where id = '{$id}'");
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('tema/header', $data);
+			$this->load->view('admin/edit_kategory', $data);
+			$this->load->view('tema/footer');
+		} 
+		if($this->input->post()){
+			$_POST['input']['kategory'] = strtolower(str_replace(" ","_",$_POST['input']['nm_kategory']));
+			$this->MData->edit(['id'=>$id],'tb_buku_kategory',$_POST['input']);
+			$this->session->set_flashdata('flash', 'Data Kategory berhasil diubah');
+			redirect('admin/data_kategory');
 		}
 	}
 
