@@ -58,7 +58,7 @@
                               </td>
                               <td align="center"><?php
                                     if ($dp['status_pinjam'] == 0) { ?>
-                                    <a href='<?php echo base_url(); ?>admin/kembalikan/<?php echo $dp['id_buku_pinjaman']; ?>/<?php echo $dp['jumlah_buku']; ?>/<?php echo $dp['id_user']; ?>' class='btn btn-add btn-sm'><i class='fa fa-check'></i></a>
+                                    <a href='<?php echo base_url(); ?>admin/kembalikan/<?php echo $dp['id_buku_pinjaman']; ?>/<?php echo $dp['jumlah_buku']; ?>/<?php echo $dp['id_user']; ?>' class='btn btn-add btn-sm'>Setujui</i></a>
                                  <?php
                                     } else {
                                        echo " <span class='label label-success'>Masih dipinjam</span>";
