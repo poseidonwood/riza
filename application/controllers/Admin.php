@@ -125,7 +125,7 @@ class Admin extends CI_Controller
 	public function data_member()
 	{
 		$data['title'] = 'Data Member';
-		$data['kelas'] = $this->MData->customresult("SELECT * FROM kelas where status = '1' ORDER BY kelas ASC");
+		$data['kelas'] = $this->MData->customresult("SELECT * from tb_kelas where status = '1' ORDER BY kelas ASC");
 
 		if ($this->input->post()) {
 			$data['datamember'] = $this->Admin_model->data_user_all_class(array('kelas' => $this->input->post('sortirclass')));
@@ -142,7 +142,7 @@ class Admin extends CI_Controller
 	{
 		
 		$data['title'] = 'Tambah Data Member';
-		$data['kelas'] = $this->MData->customresult("SELECT * FROM kelas where status = '1' ORDER BY kelas ASC");
+		$data['kelas'] = $this->MData->customresult("SELECT * from tb_kelas where status = '1' ORDER BY kelas ASC");
 
 		// $this->form_validation->set_rules('nama', 'nama', 'required|min_length[3]', [
 		// 	'required'	=>	'Kolom nama tidak boleh kosong',
@@ -175,7 +175,7 @@ class Admin extends CI_Controller
 	{
 		$data['title'] = 'Edit Data Member';
 		$data['userid'] = $this->Admin_model->userbyid($id);
-		$data['kelas'] = $this->MData->customresult("SELECT * FROM kelas where status = '1' ORDER BY kelas ASC");
+		$data['kelas'] = $this->MData->customresult("SELECT * from tb_kelas where status = '1' ORDER BY kelas ASC");
 		$this->form_validation->set_rules('input[nama_user]', 'nama', 'required|min_length[3]', [
 			'required'	=>	'Kolom nama tidak boleh kosong',
 			'min_length' =>	''
