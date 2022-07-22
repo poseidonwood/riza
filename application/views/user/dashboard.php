@@ -2,7 +2,7 @@
 <section class="content">
    <div class="flash-data-home" data-flashdata="<?php echo $this->session->flashdata('flash'); ?>"></div>
    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <!-- <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
          <div id="cardbox1">
             <div class="statistic-box">
                <i class="fa fa-users fa-3x"></i>
@@ -14,19 +14,21 @@
                <h3> Member Aktif</h3>
             </div>
          </div>
-      </div>
+      </div> -->
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-         <div id="cardbox2">
-            <div class="statistic-box">
-               <i class="fa fa-book fa-3x"></i>
-               <div class="counter-number pull-right">
-                  <span class="count-number"><?php echo $totalbuku; ?></span>
-                  <span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
-                  </span>
+         <a href="<?=base_url('home')?>">
+            <div id="cardbox2">
+               <div class="statistic-box">
+                  <i class="fa fa-book fa-3x"></i>
+                  <div class="counter-number pull-right">
+                     <span class="count-number"><?php echo $totalbuku; ?></span>
+                     <span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+                     </span>
+                  </div>
+                  <h3> Total Buku</h3>
                </div>
-               <h3> Total Buku</h3>
             </div>
-         </div>
+         </a>
       </div>
 
    </div>
