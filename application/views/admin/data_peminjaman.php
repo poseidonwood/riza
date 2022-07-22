@@ -30,7 +30,7 @@
                            <th>Tanggal Kembali</th>
                            <th>Judul Buku</th>
                            <th>Status</th>
-                           <th>Req Pinjaman</th>
+                           <th>Req Pengembalian</th>
                         </tr>
                      </thead>
                      <tbody>
@@ -56,7 +56,7 @@
                                     <span class="label label-primary">Belum Kena Denda</span>
                                  <?php } ?>
                               </td>
-                              <td><?php
+                              <td align="center"><?php
                                     if ($dp['status_pinjam'] == 0) { ?>
                                     <a href='<?php echo base_url(); ?>admin/kembalikan/<?php echo $dp['id_buku_pinjaman']; ?>/<?php echo $dp['jumlah_buku']; ?>/<?php echo $dp['id_user']; ?>' class='btn btn-add btn-sm'><i class='fa fa-check'></i></a>
                                  <?php
