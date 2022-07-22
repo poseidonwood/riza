@@ -15,7 +15,7 @@
                <!-- Plugin content:powerpoint,txt,pdf,png,word,xl -->
                <div class="btn-group">
                   <div class="buttonexport" id="buttonlist">
-                     <a class="btn btn-add" href="<?php echo base_url(); ?>admin/add_kategory"> <i class="fa fa-plus"></i> Tambah Kategory
+                     <a class="btn btn-add" href="<?php echo base_url(); ?>admin/add_kategory"> <i class="fa fa-plus"></i> Tambah Kategori
                      </a>
                   </div>
                </div>

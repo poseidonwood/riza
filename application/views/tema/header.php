@@ -116,6 +116,12 @@
                   </a>
                </li>
                <li>
+                  <a href="<?php echo base_url(); ?>admin/data_kategory"><i class="fa fa-book"></i><span>Kategori Buku</span>
+                     <span class="pull-right-container">
+                     </span>
+                  </a>
+               </li>
+               <li>
                   <a href="<?php echo base_url(); ?>admin/data_peminjam"><i class="fa fa-shopping-cart"></i><span>Peminjaman</span>
                      <span class="pull-right-container">
                      </span>
@@ -141,12 +147,6 @@
                </li>
                <li>
                   <a href="<?php echo base_url(); ?>admin/data_kelas"><i class="fa fa-graduation-cap"></i><span>Kelas</span>
-                     <span class="pull-right-container">
-                     </span>
-                  </a>
-               </li>
-               <li>
-                  <a href="<?php echo base_url(); ?>admin/data_kategory"><i class="fa fa-book"></i><span>Kategory Buku</span>
                      <span class="pull-right-container">
                      </span>
                   </a>
