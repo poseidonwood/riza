@@ -12,9 +12,12 @@
 			<div class="form-group">
 				<label class="control-label" for="input-nama">Kelas</label>
 				<select class="form-control" name="kelas">
-					<option value="X">X</option>
-					<option value="XI">XI</option>
-					<option value="XII">XII</option>
+					<?php
+					foreach ($kelas as $kelass) {
+						$selecteddata = $sortirclass == $kelass->kelas ? "selected" : NULL;
+						echo "<option value='{$kelass->kelas}' {$selecteddata}>{$kelass->nm_kelas}</option>";
+					}
+					?>
 				</select>
 				<small class="text-danger"><?php echo form_error('kelas'); ?></small>
 			</div>

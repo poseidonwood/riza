@@ -13,6 +13,7 @@ class Registrasi extends CI_Controller
 	{
 		$data['title'] = 'Halaman Registrasi';
 		$data['databuku'] = $this->Home_model->databuku();
+		$data['kelas'] = $this->MData->customresult("SELECT * from tb_kelas where status = '1' ORDER BY kelas ASC");
 		$data['datapinjaman'] = $this->Home_model->data_pinjaman();
 		$data['t_pinjaman'] = $this->db->get_where('tb_pinjaman', ['id_user_pinjaman' =>	$this->session->userdata('id')])->num_rows();
 		$this->form_validation->set_rules('nama', 'nama', 'required|regex_match[/^([a-z ])+$/i]', [
