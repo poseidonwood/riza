@@ -16,7 +16,7 @@
          </div>
       </div> -->
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-         <a href="<?=base_url('home')?>">
+         <a href="<?= base_url('home') ?>">
             <div id="cardbox2">
                <div class="statistic-box">
                   <i class="fa fa-book fa-3x"></i>
@@ -46,6 +46,7 @@
                   foreach ($datapinjaman as $dp) : ?>
                      <?php if ($dp['tgl_kembali_pinjaman'] == date('Y-m-d')) { ?>
                         <div class="work-touchpoint">
+                           <p>Tanggal Kembali</p>
                            <div class="work-touchpoint-date">
                               <span class="day"><?php echo date('d', strtotime($dp['tgl_kembali_pinjaman'])); ?></span>
                               <span class="month"><?php echo substr(date('F', strtotime($dp['tgl_pinjam_buku'])), 0, 3); ?></span>
@@ -57,22 +58,17 @@
                            <p><?php echo $dp['kategori_buku']; ?> karya <?php echo $dp['penulis_buku']; ?></p>
                         </div>
                      <?php } else { ?>
-                        <div class="work-touchpoint">
-                           <div class="work-touchpoint-date">
-                              <span class="day"><?php echo date('d', strtotime($dp['tgl_kembali_pinjaman'])); ?></span>
-                              <span class="month"><?php echo substr(date('F', strtotime($dp['tgl_pinjam_buku'])), 0, 3); ?></span>
-                           </div>
-                        </div>
                         <div class="detailswork">
                            <div class="btn-group pull-right" role="group">
                               <!-- <a href="<?php echo base_url(); ?>user/baca/detail/<?php echo $dp['url_buku']; ?>" title="Klik untuk mulai membaca" class='text-white btn btn-primary' ">Baca</a> -->
                               <?php
                               if ($dp['status_pinjam'] == 1) { ?>
-                                 <a href="<?php echo base_url(); ?>user/dashboard/kembalikan/<?php echo $dp['id_buku_pinjaman']; ?>" class='text-white btn btn-success' title="Klik untuk mengembalikan buku">Kembalikan</a>
+                                 <a href="<?php echo base_url(); ?>user/dashboard/kembalikan/<?php echo $dp['id_buku_pinjaman']; ?>" class='btn btn-success' title="Klik untuk mengembalikan buku" style="color:white;">Kembalikan</a>
                               <?php } else { ?>
                                  <a href="#" class='text-white btn btn-danger' title="Klik untuk mengembalikan buku">Proses Acc Admin</a>
                               <?php } ?>
                            </div>
+                           <span style="font-size: 12px;">Tanggal Kembali : <?php echo date('d M Y', strtotime($dp['tgl_kembali_pinjaman'])); ?></span><br>
                            <a href="#" title="Klik untuk mulai membaca"><?php echo $dp['judul_buku']; ?> (<?php echo ucwords($dp['type_buku']); ?>)</a> <br>
                            <p><?php echo $dp['kategori_buku']; ?> karya <?php echo $dp['penulis_buku']; ?></p>
                         </div>

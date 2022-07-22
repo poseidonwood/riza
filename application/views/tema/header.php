@@ -128,6 +128,12 @@
                   </a>
                </li>
                <li>
+                  <a href="<?php echo base_url(); ?>admin/data_transaksi"><i class="fa fa-history"></i><span>Riwayat Transaksi</span>
+                     <span class="pull-right-container">
+                     </span>
+                  </a>
+               </li>
+               <li>
                   <a href="<?php echo base_url(); ?>admin/data_member"><i class="fa fa-users"></i><span>Member</span>
                      <span class="pull-right-container">
                      </span>

@@ -64,8 +64,16 @@ class Home extends CI_Controller {
 			'id_user_pinjaman'			=>	$this->session->userdata('id'),
 			'jml_pinjam'				=>	1
 		);
+		$data1 = array (
+			'id'				=>	rand(),
+			'tgl_kembali_pinjaman'		=>	$back,
+			'id_buku_pinjaman'			=>	$id_book,
+			'id_user_pinjaman'			=>	$this->session->userdata('id'),
+			'jml_pinjam'				=>	1
+		);
 
 		$this->db->insert('tb_pinjaman', $data);
+		$this->db->insert('tb_transaksi', $data1);
 		$this->session->set_flashdata('flash', 'Pinjam buku berhasil');
 		redirect('user/dashboard');
 	}
@@ -86,7 +94,17 @@ class Home extends CI_Controller {
 			'id_buku_pengembalian'		=>   $id_book,
 			'id_user_pengembalian'		=>   $this->session->userdata('id')
 		);
-	
+		$data1 = array(
+			'id'				=>	rand(),
+			'tgl_pinjam_buku'			=>	$ceksisa['tgl_pinjam_buku'],
+			'tgl_kembali_pinjaman'		=>	date('Y-m-d H:i:s'),
+			'id_buku_pinjaman'			=>	$id_book,
+			'id_user_pinjaman'			=>	$this->session->userdata('id'),
+			'jml_pinjam'				=>	1,
+			'status_pinjam' 			=>  2
+		);
+
+		$this->db->insert('tb_transaksi', $data1);
 		$this->db->insert('tb_pengembalian', $data);
 		$this->session->set_flashdata('flash', 'Buku berhasil dikembalikan');
 		redirect('home');

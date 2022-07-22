@@ -201,6 +201,15 @@ class Admin_model extends CI_Model
 		$this->db->order_by('tgl_pinjam_buku', 'DESC');
 		return $this->db->get()->result_array();
 	}
+	public function data_transaksi()
+	{
+		$this->db->select('*');
+		$this->db->from('tb_transaksi');
+		$this->db->join('tb_buku', 'tb_buku.id_buku = tb_transaksi.id_buku_pinjaman');
+		$this->db->join('tb_user', 'tb_user.id_user = tb_transaksi.id_user_pinjaman');
+		$this->db->order_by('tgl_pinjam_buku', 'DESC');
+		return $this->db->get()->result_array();
+	}
 
 	public function data_pengembalian_buku()
 	{

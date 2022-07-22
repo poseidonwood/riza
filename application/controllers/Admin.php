@@ -64,7 +64,7 @@ class Admin extends CI_Controller
 			'required'	=>	'Kolom deskripsi buku tidak boleh kosong',
 			'min_length' =>	'Deskripsi buku minimal 5 karakter'
 		]);
-		$kategorybuku  = $this->MData->selectdatawhereresult('tb_buku_kategory',array('status' => 1));
+		$kategorybuku  = $this->MData->selectdatawhereresult('tb_buku_kategory', array('status' => 1));
 		$data['kategorybuku'] = $kategorybuku;
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('tema/header', $data);
@@ -140,7 +140,7 @@ class Admin extends CI_Controller
 	}
 	public function add_member()
 	{
-		
+
 		$data['title'] = 'Tambah Data Member';
 		$data['kelas'] = $this->MData->customresult("SELECT * from tb_kelas where status = '1' ORDER BY kelas ASC");
 
@@ -191,7 +191,7 @@ class Admin extends CI_Controller
 			$this->load->view('tema/footer');
 		} else {
 			$this->Admin_model->ubah_user();
-			$this->session->set_flashdata('flash', 'Data member berhasil ditambahkan');
+			$this->session->set_flashdata('flash', 'Data member berhasil diubah');
 			redirect('admin/data_member');
 		}
 	}
@@ -224,7 +224,17 @@ class Admin extends CI_Controller
 			'id_buku_pengembalian'		=>   $id_book,
 			'id_user_pengembalian'		=>   $this->uri->segment(5)
 		);
+		$data1 = array(
+			'id'				=>	rand(),
+			'tgl_pinjam_buku'			=>	$ceksisa['tgl_pinjam_buku'],
+			'tgl_kembali_pinjaman'		=>	date('Y-m-d H:i:s'),
+			'id_buku_pinjaman'			=>	$id_book,
+			'id_user_pinjaman'			=>	$this->session->userdata('id'),
+			'jml_pinjam'				=>	1,
+			'status_pinjam' 			=>  2
+		);
 
+		$this->db->insert('tb_transaksi', $data1);
 		$this->db->insert('tb_pengembalian', $data);
 		$this->session->set_flashdata('flash', 'Buku berhasil dikembalikan');
 		redirect('admin/data_peminjam');
@@ -236,6 +246,17 @@ class Admin extends CI_Controller
 		$data['datakembali'] = $this->Admin_model->data_pengembalian_buku();
 		$this->load->view('tema/header', $data);
 		$this->load->view('admin/data_pengembalian', $data);
+		$this->load->view('tema/footer');
+	}
+	public function data_transaksi()
+	{
+		$data['title'] = 'Data Transaksi Buku';
+		// $data['datakembali'] = $this->MData->customresult("SELECT * FROM tb_transaksi");
+		$data['datakembali'] = $this->Admin_model->data_transaksi();
+		// echo json_encode($data['datakembali']); exit;
+		// [{"id":"1705225659","tgl_pinjam_buku":"2022-07-22 09:44:17","tgl_kembali_pinjaman":"2022-07-25","id_buku_pinjaman":"1574508313","id_user_pinjaman":"9","jml_pinjam":"1","status_pinjam":"1","id_buku":"1574508313","url_buku":"tes-buku-1574508313","judul_buku":"Fikih Kelas XI","penulis_buku":"Kementrian Agama RI","jumlah_buku":"2","jumlah_baca":"0","kategori_buku":"Buku","type_buku":"fisik","jml_halaman":"160","deskripsi_buku":"deskripsi buku","foto_buku":"6985ed66d3609467a0dd8504729e7a94.jpeg","link_buku":"https:\/\/drive.google.com\/file\/d\/1u2gQP4WcXwHodf-pm5wexKuOgPoF44ed\/preview","tgl_input_buku":"2019-11-23 18:25:14","jml_bintang":"2","id_user":"9","nis":"0","kelas":"X-1","nama_user":"Andra","email_user":"test@test.com","password_user":"$2y$10$6qOL\/yQ4SkvuDIY0Gc0WZ.A9qr00KXCQCmxOhdfzMtkcQ99AARhhy","akun_dibuat":"1656421199","status_user":"1","foto_profil":"avatar5.png"}]
+		$this->load->view('tema/header', $data);
+		$this->load->view('admin/data_transaksi', $data);
 		$this->load->view('tema/footer');
 	}
 }

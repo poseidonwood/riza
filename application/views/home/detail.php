@@ -27,7 +27,7 @@
         <div class="col-sm-7 prodetail">
           <h1 class="productpage-title"><?= $bukuid['judul_buku']; ?></h1>
           <?php if ($this->session->userdata('status_login') != 'sudah_login') { ?>
-            <div class="rating"> Beri Bintang Untuk Buku Ini
+            <!-- <div class="rating"> Beri Bintang Untuk Buku Ini
               <?= "<div id='rate-$bukuid[id_buku]'>
         <input type='hidden' name='rating' id='rating' value='$bukuid[jml_bintang]'>
           <ul onMouseOut=\"resetRating($bukuid[id_buku])\">";
@@ -41,9 +41,9 @@
               }
               echo "<ul>
         </div>"; ?>
-            </div>
+            </div> -->
           <?php } else { ?>
-            <div class="rating"> Beri Bintang Untuk Buku Ini
+            <!-- <div class="rating"> Beri Bintang Untuk Buku Ini
               <?= "<div id='rate-$bukuid[id_buku]'>
         <input type='hidden' name='rating' id='rating' value='$bukuid[jml_bintang]'>
           <ul onMouseOut=\"resetRating($bukuid[id_buku])\">";
@@ -57,7 +57,7 @@
               }
               echo "<ul>
         </div>"; ?>
-            </div>
+            </div> -->
           <?php } ?>
           <hr>
           <ul class="list-unstyled productinfo-details-top">
@@ -66,19 +66,19 @@
             </li>
           </ul>
           <ul class="list-unstyled product_info">
-            <li>
+            <li style="color:black;">
               <label>Penulis:</label>
               <span> <a href="#"><?= $bukuid['penulis_buku']; ?></a></span>
             </li><br>
-            <li>
+            <li style="color:black;">
               <label>Kategori:</label>
               <span> <?= $bukuid['kategori_buku']; ?></span>
             </li><br>
-            <li>
+            <li style="color:black;">
               <label>Jumlah Halaman:</label>
               <span> <?= $bukuid['jml_halaman']; ?> Halaman</span>
             </li><br>
-            <li>
+            <li style="color:black;">
               <label>Status Ketersediaan:</label>
               <span>
                 <?php if ($bukuid['jumlah_buku'] != 0) { ?>
@@ -90,7 +90,7 @@
             </li>
           </ul>
           <hr>
-          <p class="product-desc"> <?= $bukuid['deskripsi_buku']; ?></p>
+          <p class="product-desc" style="color:black;"> <?= $bukuid['deskripsi_buku']; ?></p>
           <div id="product">
             <div class="form-group">
               <?php

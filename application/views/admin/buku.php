@@ -27,6 +27,8 @@
                                        <th>No</th>
                                        <th>ID Buku</th>
                                        <th>Judul Buku</th>
+                                       <th>Jenis Buku</th>
+                                       <th>Dibaca</th>
                                        <th>Penulis</th>
                                        <th>Jumlah</th>
                                        <th>Kategori</th>
@@ -41,6 +43,8 @@
                                        <td><?php echo $i; ?></td>
                                        <td><?php echo $db['id_buku']; ?></td>
                                        <td><?php echo $db['judul_buku']; ?></td>
+                                       <td><?php echo ucwords($db['type_buku']); ?></td>
+                                       <td><?php echo $db['jumlah_baca']; ?> Kali</td>
                                        <td><?php echo $db['penulis_buku']; ?></td>
                                        <td><?php echo $db['jumlah_buku']; ?></td>
                                        <td><?php echo $db['kategori_buku']; ?></td>
